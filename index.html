@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surpresa</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #222; /* Fundo escuro para destacar o botão */
+        }
+        .botao-gigante {
+            width: 50vw; /* Ocupa metade da largura da tela */
+            height: 50vw;
+            max-width: 300px;
+            max-height: 300px;
+            background-color: red;
+            border: 15px solid black; /* Borda preta grossa */
+            border-radius: 50%; /* Deixa redondo */
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+        .botao-gigante:active {
+            transform: scale(0.95); /* Efeito de clique */
+        }
+    </style>
+</head>
+<body>
+
+    <button class="botao-gigante" onclick="tocarGemidao()"></button>
+
+    <audio id="audio-zap" src="gemidane-do-zap.mp3" preload="auto"></audio>
+
+    <script>
+        function tocarGemidao() {
+            var som = document.getElementById("audio-zap");
+            som.currentTime = 0; // Reinicia o áudio se clicar de novo
+            som.play();
+        }
+    </script>
+
+</body>
+</html>
